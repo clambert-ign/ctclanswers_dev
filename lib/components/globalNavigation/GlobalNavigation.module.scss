@@ -15,6 +15,7 @@
   grid-gap: 24px;
   position: relative;
   padding: 24px 14px 20px;
+  align-items: center;
 
   @include media(medium) {
       grid-template-columns: 2fr 2fr 4fr;
@@ -105,7 +106,7 @@
       list-style-type: none;
       display: inline-grid;
       grid-template-columns: repeat(var(--gn-menu-desktop-rows, 2), auto);
-      gap: 40px;
+      gap: 15px;
 
       li {
           padding: 16px 12px 20px 16px;
