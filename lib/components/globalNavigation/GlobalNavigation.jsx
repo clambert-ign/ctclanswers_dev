@@ -64,7 +64,7 @@ const GlobalNavigation = (props) => {
     if (contentWidth >= containerWidth || contentWidth === 0) {
       menuContainerRef.current.style.setProperty(
         "visibility",
-        "hidden"
+        "visible"
       )
       burgerMenuRef.current.style.setProperty(
         "visibility",
@@ -77,7 +77,7 @@ const GlobalNavigation = (props) => {
         )
         burgerMenuRef.current.style.setProperty(
           "visibility",
-          "hidden"
+          "visible"
         )
     }
     return () => window.removeEventListener("resize", updateWidthAndHeight)
