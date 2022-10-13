@@ -12,7 +12,6 @@ const ImageAcousticData = (props) => {
     titleTag
   } = props.data
 
-  console.log('image', props.data)
   return (
     <Image
       altText={getValue(altText)}

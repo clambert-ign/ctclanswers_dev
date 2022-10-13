@@ -5,7 +5,6 @@ import Button from '@atoms/button/Button'
 import Plyr from 'plyr-react'
 import 'plyr-react/dist/plyr.css'
 import styles from './Audio.module.scss'
-import './AudioPlyr.css'
 
 /**
  * Audio
@@ -93,7 +92,7 @@ const Audio = React.forwardRef((props, ref) => {
         </div>
         <div className={styles.plyrContainer}>
           <Plyr
-            id="player"
+            id="audioplayer"
             ref={plyrref}
             source={mediaSrc}
             options={{
@@ -113,7 +112,7 @@ const Audio = React.forwardRef((props, ref) => {
         </div>
       </div>
       <div className={styles[`audio-transcript`]}>
-        <Button type='tertiary' text='Download Transcript' link={transcript} icon="download" iconAlign="right" download />
+        <Button type='tertiary' text='Download Transcript' link={transcript} icon="download" iconAlign="right" download isDownload={true} />
       </div>
     </div>
   )

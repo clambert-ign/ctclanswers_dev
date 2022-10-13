@@ -25,15 +25,17 @@ const EditorialText = (props) => {
   const textWrapperRef  = useRef(null)
   const [isButtonVisible, setIsButtonVisible] = useState(false)
   const HeadingTag = `${titleTag}`
-
+  //Make sure we are filtering out null children
+  const children = React.Children.toArray(props.children).filter(Boolean)
+        
   useEffect(() => {
-    if(props.children) {
-      if(Array.isArray(props.children)) {
-        if(props.children.find((e) => e.type.displayName == "Button")) {
+    if(children) {
+      if(Array.isArray(children)) {
+        if(children.find((e) => (e.type.name !== "RichText"))) {
           setIsButtonVisible(true)
         }
       } else {
-        props.children.type.name === "Button" ? setIsButtonVisible(true) : '' 
+        props.children.type.name === "ButtonAcousticData" ? setIsButtonVisible(true) : '' 
       }
       textRef.current.style.setProperty(
         "--et-text-column-count",
@@ -60,23 +62,17 @@ const EditorialText = (props) => {
       {props.children && (
         <>
           <div className={`${styles['editorialText-content']}`} ref={textRef}>
-            {React.Children.map(props.children, function (child) {
-              if (child.type.name != 'Button') {
+            {React.Children.map(children, function (child) {
+              if (child.type.name === 'RichText') {
                 return (child)
               }
             })}
           </div>
           {isButtonVisible ? 
             <div className={`${styles['editorialText-btn']}`}>
-              {React.Children.map(props.children, function (child) {
-                if (child.type.name === 'Button' && child.props.type === 'primary') {
-                  return (<span className={styles['editorialText-btn-primary']}>{child}</span>)
-                }
-                if (child.type.name === 'Button' && child.props.type === 'secondary') {
-                  return (<span className={styles['editorialText-btn-secondary']}>{child}</span>)
-                }
-                if (child.type.name === 'Button' && child.props.type === 'tertiary') {
-                  return (<span className={styles['editorialText-btn-tertiary']}>{child}</span>)
+              {React.Children.map(children, function (child) {
+                if (child.type.name !== 'RichText') {
+                  return (child)
                 }
               })}
             </div>

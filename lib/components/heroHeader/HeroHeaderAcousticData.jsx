@@ -18,14 +18,10 @@ const HeroHeaderAcousticData = (props) => {
     title
   } = props.data
 
-//  console.log(props.data)
-
   const bgImage = backgroundImage?.value?.elements?.src?.url
   const bgVideo = backgroundVideo?.value?.elements?.src?.url
   const sdImage = sideImage?.value?.elements?.src?.url
-  const sdVideo = sideVideo?.value?.elements?.src?.url
-
-  
+  const sdVideo = sideVideo?.value?.elements?.src?.url 
 
   // link buttons, loop over them all and output
   // need to handle click events

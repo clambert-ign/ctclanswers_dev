@@ -8,6 +8,7 @@ const componentsMapping = [
     { componentName: 'Image', acousticComponentName: 'Kanso-Atom-Image' },
     { componentName: 'Divider', acousticComponentName: 'Kanso-Atom-Divider' },
     { componentName: 'Video', acousticComponentName: 'Kanso-Atom-Video' },
+    { componentName: 'Audio', acousticComponentName: 'Kanso-Atom-Audio' }
 ]
 
 export const getComponentName = (componentType) => {

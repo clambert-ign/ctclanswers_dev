@@ -10,8 +10,6 @@ const FlexiTemplate = (props) => {
   const dispatch = useDispatch()
   const { data } = props
   const footerComplianceCode = data?.elements?.complianceCode?.value
-
-  console.log('data',data)
   
   useEffect(() => {
     if(footerComplianceCode) {
@@ -31,7 +29,6 @@ const FlexiTemplate = (props) => {
 
       {data.pageContent?.map((content, index) => {
         if (getComponentName(content.type) === 'HeroHeader') {
-          console.log(content?.document?.elements)
           return <HeroHeaderAcousticData key={`${content.type}${index}`} data={content?.document?.elements} />
         }
         if (getComponentName(content.type) === 'PageSection') {

@@ -1,23 +1,23 @@
 import { getValue, getFullUrl, getSelectionValue } from '@services/utilities/utilityHelper'
-import Video from './Video'
+import Audio from './Audio'
 
-const VideoAcousticData = (props) => {
+const AudioAcousticData = (props) => {
   const { 
-    caption,
+    description,
+    duration,
     image,
     src,
-    subtitle,
     title,
     titleTag,
     transcript 
   } = props.data
-  
+
   return (
-    <Video
-      caption={getValue(caption)}
+    <Audio
+      description={getValue(description)}
+      duration={getValue(duration)}
       image={getFullUrl(image?.url)}
       src={getFullUrl(src?.url)}
-      subtitle={getFullUrl(subtitle?.url)}
       title={getValue(title)}
       titleTag={getSelectionValue(titleTag)}
       transcript={getFullUrl(transcript?.url)}
@@ -25,4 +25,4 @@ const VideoAcousticData = (props) => {
   )
 }
 
-export default VideoAcousticData
+export default AudioAcousticData

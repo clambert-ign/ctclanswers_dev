@@ -2,8 +2,7 @@ import React, { useRef, useImperativeHandle } from 'react'
 import PropTypes from 'prop-types'
 import Plyr from 'plyr-react'
 import styles from './Video.module.scss'
-import '../../../node_modules/plyr-react/dist/plyr.css'
-//import './VideoPlyr.css'
+import 'plyr-react/dist/plyr.css'
 import Button from '@atoms/button/Button'
 
 /**
@@ -104,7 +103,7 @@ const Video = React.forwardRef((props, ref) => {
       {caption && <p className={styles[`video-caption`]}>{caption}</p>}
       {transcript && (
         <div className={styles[`video-transcript`]}>
-          <Button type='tertiary' text='Download Transcript' link={transcript} icon="download" iconAlign="right" download="transcript.txt" />
+          <Button type='tertiary' text='Download Transcript' link={transcript} icon="download" iconAlign="right" isDownload={true} download="transcript.txt" />
         </div>
       )}
     </div>

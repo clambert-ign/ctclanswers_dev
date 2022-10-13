@@ -9,7 +9,7 @@ import styles from './Modal.module.scss'
 * @param {string} title     - The title to be displayed within the Modal.
 * @param {string} titleTag  - The heading tag wrapped around the Modal title.
 * @param {string} align     - The alignment of the Modal to be displayed.
-* @param {boolean} onClose  - Are we attempting to close the Modal from within?
+* @param {function} onClose  - Are we attempting to close the Modal from within?
 * @return React component
 */
 
@@ -26,7 +26,8 @@ const Modal = (props) => {
   const [showModal, setShowModal] = useState(show)
   const HeadingTag = `${titleTag}`
 
-  const closeModal = () => {         
+  const closeModal = (e) => {    
+    e.preventDefault()     
     setShowModal(false)
     if (onClose) { onClose(false) } 
   }
@@ -77,14 +78,14 @@ Modal.propTypes = {
   title:    PropTypes.string,
   align:    PropTypes.string.isRequired,
   align:    PropTypes.oneOf(['left', 'center']),
-  onClose:  PropTypes.bool
+  onClose:  PropTypes.func
 }
 
 Modal.defaultProps = {
   show:     false,
   titleTag: 'h3',
   align:    'left',
-  onClose:  false
+  onClose:  null
 }
 
 export default Modal

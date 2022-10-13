@@ -3,6 +3,7 @@ import Editorial from './Editorial'
 import EditorialTextAcousticData from '@atoms/editorialText/EditorialTextAcousticData'
 import ImageAcousticData from '@atoms/image/ImageAcousticData'
 import VideoAcousticData from '@atoms/video/VideoAcousticData'
+import AudioAcousticData from '@atoms/audio/AudioAcousticData'
 import { getComponentName } from '@services/utilities/acousticMappings'
 
 const EditorialAcousticData = (props) => {
@@ -11,19 +12,20 @@ const EditorialAcousticData = (props) => {
     content 
   } = props.data
 
-  console.log('editorial',props.data)
-
   return (  
     <Editorial>
       {content?.values?.map((content, index) => {
         if (getComponentName(content.type) === 'EditorialText') {
-          return <EditorialTextAcousticData data={content?.elements} />
+          return <EditorialTextAcousticData key={index} data={content?.elements} />
         }
         if (getComponentName(content.type) === 'Image') {
-          return <ImageAcousticData data={content?.elements} />
+          return <ImageAcousticData key={index} data={content?.elements} />
         }
         if (getComponentName(content.type) === 'Video') {
-          return <VideoAcousticData data={content?.elements} />
+          return <VideoAcousticData key={index} data={content?.elements} />
+        }
+        if (getComponentName(content.type) === 'Audio') {
+          return <AudioAcousticData key={index} data={content?.elements} />
         }
       })}
     </Editorial>

@@ -88,103 +88,54 @@
       justify-content: flex-start;
       row-gap: 24px;
     }
-  }
 
-  .editorialText-btn-primary {
-    a {
-      color: var(--et-primary-btn-text-color, var(--primary-btn-text-color));
-      background-color: var(--et-primary-btn-bgcolor, var(--primary-btn-bgcolor));
-      border: solid 3px var(--et-primary-btn-border-color, var(--primary-btn-border-color));
-      margin: 0 0 24px;
-
-      @include media (medium, large, extraLarge, extraExtraLarge) {
-        margin: 0;
-      }
-
-      &:hover {
-        color: var(--et-primary-btn-hover-text-color, var(--primary-btn-hover-text-color));
-        background-color: var(--et-primary-btn-hover-bgcolor, var(--primary-btn-hover-bgcolor));
-        border: solid 3px var(--et-primary-btn-hover-border-color, var(--primary-btn-hover-border-color));
-        
-        svg {
-          fill: var(--et-primary-btn-hover-text-color, var(--primary-btn-hover-text-color));
-        }
-      }
-      &:active {
-        color: var(--et-primary-btn-active-text-color, var(--primary-btn-active-text-color));
-        background-color: var(--et-primary-btn-active-bgcolor, var(--primary-btn-active-bgcolor));
-        border: solid 3px var(--et-primary-btn-active-border-color, var(--primary-btn-active-border-color));
-        
-        svg {
-          fill: var(--et-primary-btn-active-text-color, var(--primary-btn-active-text-color));
-        }
-      }
-      svg {
-        fill: var(--et-primary-btn-text-color, var(--primary-btn-text-color));
-      }
-    }
-  }
-
-  .editorialText-btn-secondary {
-    a {
-      color: var(--et-secondary-btn-text-color, var(--secondary-btn-text-color));
-      background-color: var(--et-secondary-btn-bgcolor, var(--secondary-btn-bgcolor));
-      border: solid 3px var(--et-secondary-btn-border-color, var(--secondary-btn-border-color));
-      margin: 0 0 24px;
-
-      @include media (medium, large, extraLarge, extraExtraLarge) {
-        margin: 0;
-      }
-
-      &:hover {
-        color: var(--et-secondary-btn-hover-text-color, var(--secondary-btn-hover-text-color));
-        background-color: var(--et-secondary-btn-hover-bgcolor, var(--secondary-btn-hover-bgcolor));
-        border: solid 3px var(--et-secondary-btn-hover-border-color, var(--secondary-btn-hover-border-color));
-        
-        svg {
-          fill: var(--et-secondary-btn-hover-text-color, var(--secondary-btn-hover-text-color));
-        }
-      }
-      &:active {
-        color: var(--et-secondary-btn-active-text-color, var(--secondary-btn-active-text-color));
-        background-color: var(--et-secondary-btn-active-bgcolor, var(--secondary-btn-active-bgcolor));
-        border: solid 3px var(--et-secondary-btn-active-border-color, var(--secondary-btn-active-border-color));
-        
-        svg {
-          fill: var(--et-secondary-btn-active-text-color, var(--secondary-btn-active-text-color));
-        }
-      }
-      svg {
-        fill: var(--et-secondary-btn-text-color, var(--secondary-btn-text-color));
-      }
-    }
-  }
-
-  .editorialText-btn-tertiary {
-    a {
-      color: var(--et-tertiary-btn-text-color, var(--tertiary-btn-text-color));
-      margin: 0 0 24px;
-
-      @include media (medium, large, extraLarge, extraExtraLarge) {
-        margin: 0;
-      }
-
-      &:hover {
-        color: var(--et-tertiary-btn-hover-text-color, var(--tertiary-btn-hover-text-color));
-        svg {
-          fill: var(--et-tertiary-btn-hover-text-color, var(--tertiary-btn-hover-text-color));
-        }
-      }
-      &:active {
-        color: var(--et-tertiary-btn-active-text-color, var(--tertiary-btn-active-text-color));
-        background-color: var(--et-tertiary-btn-active-bgcolor, var(--tertiary-btn-active-bgcolor));
-        svg {
-          fill: var(--et-tertiary-btn-active-text-color, var(--tertiary-btn-active-text-color));
-        }
-      }
-      svg {
-        fill: var(--et-tertiary-btn-text-color, var(--tertiary-btn-text-color));
-      }
-    }
+    --primary-btn-font-size: 16px;
+    --primary-btn-font-weight: 700;
+    --primary-btn-line-height: 19.2px;
+    --primary-btn-text-color: #fff;
+    --primary-btn-bgcolor: #6267A1;
+    --primary-btn-border-color: #6267A1;
+    --primary-btn-hover-text-color: #fff;
+    --primary-btn-hover-bgcolor: #757AB5;
+    --primary-btn-hover-border-color: #757AB5;
+    --primary-btn-active-text-color: #6267A1;
+    --primary-btn-active-bgcolor: #fff;
+    --primary-btn-active-border-color: #fff;
+    --primary-btn-focus-text-color: #4B4C53;
+    --primary-btn-focus-bgcolor: #FFDD00;
+    --primary-btn-focus-border-color: #FFDD00;
+    --primary-btn-disabled-text-color: #4B4C53;
+    --primary-btn-disabled-bgcolor: #F5F5F6;
+    --primary-btn-disabled-border-color: #F5F5F6;
+    --secondary-btn-font-size: 16px;
+    --secondary-btn-font-weight: 700;
+    --secondary-btn-line-height: 19.2px;
+    --secondary-btn-text-color: #6267A1;
+    --secondary-btn-bgcolor: transparent;
+    --secondary-btn-border-color: #6267A1;
+    --secondary-btn-hover-text-color: #fff;
+    --secondary-btn-hover-bgcolor: #6267A1;
+    --secondary-btn-hover-border-color: #6267A1;
+    --secondary-btn-active-text-color: #6267A1;
+    --secondary-btn-active-bgcolor: #F5F5F6;
+    --secondary-btn-active-border-color: #F5F5F6;
+    --secondary-btn-focus-text-color: #4B4C53;
+    --secondary-btn-focus-bgcolor: #FFDD00;
+    --secondary-btn-focus-border-color: #FFDD00;
+    --secondary-btn-disabled-text-color: #4B4C53;
+    --secondary-btn-disabled-bgcolor: transparent;
+    --secondary-btn-disabled-border-color: #4B4C53;
+    --tertiary-btn-font-size: 16px;
+    --tertiary-btn-font-weight: 700;
+    --tertiary-btn-line-height: 19.2px;
+    --tertiary-btn-text-color: #6267A1;
+    --tertiary-btn-bgcolor: transparent;
+    --tertiary-btn-hover-text-color: #6267A1;
+    --tertiary-btn-hover-bgcolor: transparent;
+    --tertiary-btn-active-text-color: #6267A1;
+    --tertiary-btn-active-bgcolor: #F5F5F6;
+    --tertiary-btn-focus-text-color: #4B4C53;
+    --tertiary-btn-focus-bgcolor: #FFDD00;
+    --tertiary-btn-disabled-text-color: #4B4C53;
   }
 }

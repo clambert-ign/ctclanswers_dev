@@ -9,8 +9,7 @@ import Image from '@atoms/image/Image'
 * @return React component
 */
 
-// can we handle this with justa CSS class? Create custom styles and have a dropdown within Acoustic to apply. Less flexibility but this is good as it means things have to be 
-// designed upfront and made available to the content team.
+// can we handle this with just a CSS class? Create custom styles and have a dropdown within Acoustic to apply. Less flexibility but this is good as it means things have to be designed upfront and made available to the content team.
 
 const PageSection = React.forwardRef((props, ref) => {
 
@@ -21,7 +20,7 @@ const PageSection = React.forwardRef((props, ref) => {
 
   const innerRef = useRef()
   useImperativeHandle(ref, () => innerRef.current)
-  const cssClassValue = cssClass ? cssClass : ''
+  const cssClassValue = cssClass ? cssClass.trim() : ''
 
   useEffect(() => {
     if(bgImage){
@@ -37,17 +36,17 @@ const PageSection = React.forwardRef((props, ref) => {
       className={`
         ${styles.pageSection}
         ${cssClassValue.split(',').map(function (classItem, index) {
-          return styles[classItem]
+          return 'pagesection_'+classItem
         }).join(' ')}
       `}
       ref={innerRef}
     >
-      {bgImage && (
-        <div className={styles["pageSection-background"]}>
-          <Image src={bgImage} />
-        </div>
-      )}
-      {props.children}
+        {bgImage && (
+          <div className={styles["pageSection-background"]}>
+            <Image src={bgImage} />
+          </div>
+        )}
+        {props.children}
     </section>
   )
 })

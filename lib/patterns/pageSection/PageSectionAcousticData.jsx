@@ -14,9 +14,7 @@ const PageSectionAcousticData = (props) => {
       sectionId,       
       title
   } = props.data
-    
-console.log('page section', props.data)
-    
+        
   return (
     <PageSection
       cssClass={getValue(cssClass)}
@@ -24,7 +22,6 @@ console.log('page section', props.data)
       bgImage={getFullImageStr(backgroundImage.url)}
     >
       {content?.values?.map((content, index) => {
-        console.log('type',content.type)
         if (getComponentName(content.type) === 'Editorial') {
           return <EditorialAcousticData key={`${content.type}${index}`} data={content?.elements} />
         }

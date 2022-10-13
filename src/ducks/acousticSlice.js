@@ -117,8 +117,6 @@ export const initAcoustic = (locale, pageName) => async (dispatch) => {
             // Response Data
             const responseData = websiteConfigData?.data?.elements
 
-            console.log('webconfig', responseData)
-
             // Check Response for required objects
             const missingResponse = []
             if (!responseData.globalNavigation) missingResponse.push('Global navigation')

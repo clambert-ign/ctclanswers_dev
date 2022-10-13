@@ -17,7 +17,6 @@ const Editorial = (props) => {
       `${EditorialItemsNo}`
     )
   })
-  console.log('editorial text',props)
 
   return (
     <div className={styles["editorial"]} ref={columnRef}>
