@@ -23,6 +23,7 @@ import { dynamicSort, groupBy } from '@services/utilities/arrayUtils'
   * @param {string} complianceCode  - The compliance code of the Global Footer Component to be displayed.
   * @param {string} datePublished   - The published date of the Global Footer Component to be displayed.
   * @param {object} menuItems       - The menu item links of the Global Footer Component to be displayed.
+  * @param {string} footerSignoff
   * @return React component
   */
 
@@ -31,7 +32,8 @@ const GlobalFooter = (props) => {
   const {
     complianceCode,
     datePublished, 
-    menuItems
+    menuItems,
+    footerSignoff
   } = props
 
   const date = (datePublished) ? datePublished : <FooterDate />
@@ -137,7 +139,8 @@ const FooterDate = () => {
 GlobalFooter.propTypes = {
   complianceCode: PropTypes.string,
   datePublished:  PropTypes.string,
-  menuItems:      PropTypes.object
+  menuItems:      PropTypes.object,
+  footerSignoff:  PropTypes.string
 }
 
 export default GlobalFooter

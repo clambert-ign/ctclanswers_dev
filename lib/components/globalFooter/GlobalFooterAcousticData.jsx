@@ -3,13 +3,20 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getValue, getValues, getFullImageStr } from '@services/utilities/utilityHelper'
 import { convertAcousticDateToPublishDate } from '@services/utilities/utilityHelper'
 import { getLibraryCode } from '@services/utilities/libraryUtils'
+import RichText from '@lib/richText/RichText'
 
 const GlobalFooterAcousticData = (props) => {
   const { 
     datePublished, 
     globalComplianceCode, 
-    menuItems 
+    menuItems,
+    footerSignoff
   } = props.data  
+
+  const getRichText = (text) => {
+    if (!text) return ''
+    return <RichText data={text} />
+  }  
   
   const languagePath = useSelector((state) => state.acoustic.language)
   const languageCode = getLibraryCode(languagePath)
@@ -37,6 +44,7 @@ const GlobalFooterAcousticData = (props) => {
       menuItems={footerMenuItems}
       datePublished={publishedDate}
       complianceCode={getValue(globalComplianceCode)}
+      footerSignoff={getRichText(getValue(footerSignoff))}
     />
   )
 }
