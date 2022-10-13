@@ -93,6 +93,11 @@ const GlobalFooter = (props) => {
           ))}
         </ul>
       </div>
+      <div className={styles['footer-signOff']}>
+
+        CTCL Answers has been developed by Kyowa Kirin in partnership with Healthcare Professionals and Patient Advocacy Groups. CTCL Answers is the property of Kyowa Kirin International PLC.<br/>All rights reserved.
+
+      </div>
     </footer>
     <Modal show={openModal} title={t('pleaseSelectYourCountryOrRegion')} onClose={setOpenModal}>
       <ModalContent>
